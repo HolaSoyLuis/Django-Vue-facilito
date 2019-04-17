@@ -39,6 +39,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default{
     data(){
         return {
@@ -48,6 +50,26 @@ export default{
                 description: ''
             }
         }
+    },
+    methods: {
+        onSubmit(evt){
+            evt.preventDefault()
+        },
+
+        getBook(){
+            const path = 'http://localhost:8000/api/v1.0/book/${this.id}/'
+            axios.get(path).then((response) => {
+                this.form.title = response.data.title
+                this.form.description = response.data.description
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+        }
+
+    },
+    created(){
+        this.getBook()
     }
 }
 </script>
