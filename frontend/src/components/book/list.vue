@@ -3,13 +3,14 @@
 <div class = "container">
     <div class = "row">
         <div class = "col text-left">
-            <h2>Listado de libros (API v1.0)</h2>
+            <h2>Listado de libros </h2>
+            <code>(API v1.0)</code>
             <div class="col-md-12">
               <b-table striped hover :items="books" :fields="fields">
                   <template slot="action" slot-scope="data">
-                      <b-button size="sm" variant="primary">Editar</b-button>
-                      <b-button size="sm" variant="danger">Eliminar</b-button>
-                    </template>
+                    <b-button size="sm" variant="primary">Editar</b-button>
+                    <b-button size="sm" variant="danger">Eliminar</b-button>
+                  </template>
               </b-table>
             </div>
         </div>
